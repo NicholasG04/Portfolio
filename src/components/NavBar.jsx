@@ -1,7 +1,11 @@
 import { useState } from 'react';
+import { useScrollYPosition } from 'react-use-scroll-position';
+import { useWindowHeight } from '@react-hook/window-size';
 
 export default () => {
   const [mobileVis, setMobileVis] = useState(false);
+  const scrollY = useScrollYPosition();
+  const windowHeight = useWindowHeight();
 
   return (
     <>
@@ -22,7 +26,7 @@ export default () => {
       <style jsx>{`
         nav {
           display: flex;
-          width: 80vw;
+          width: 90vw;
           padding: 20px;
           list-style-type: none;
           justify-content: flex-end;
@@ -30,6 +34,7 @@ export default () => {
           margin-bottom: auto;
           position: fixed;
           top: 0;
+          color: ${scrollY + 50 > windowHeight && !mobileVis ? ' #3aafa9' : '#def2f1'};
         }
 
         nav > li {

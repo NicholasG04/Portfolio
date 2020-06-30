@@ -20,11 +20,17 @@ export default function Home() {
           <button>Let's Go</button>
         </div>
 
-        <About />
+        <div className="section">
+          <About />
+        </div>
 
-        <Portfolio />
+        <div className="section">
+          <Portfolio />
+        </div>
 
-        <Blog />
+        <div className="section">
+          <Blog />
+        </div>
 
       </main>
 
@@ -71,6 +77,12 @@ export default function Home() {
           border: 1px solid #2b7a78;
           background-color: #2b7a78;
           transform: scale(1.1);
+        }
+
+        .section {
+          height: 100vh;
+          width: 70vw;
+          margin: 0 auto;
         }
 
         @media only screen and (max-width: 500px) {

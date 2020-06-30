@@ -9,10 +9,13 @@
     "export": "next export"
   },
   "dependencies": {
+    "@react-hook/window-size": "^3.0.6",
     "next": "9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-scroll": "^1.7.16"
+    "react-icons": "^3.10.0",
+    "react-scroll": "^1.7.16",
+    "react-use-scroll-position": "^2.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
