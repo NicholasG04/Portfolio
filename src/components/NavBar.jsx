@@ -14,10 +14,10 @@ const NavBar = () => {
       </div>
 
       <nav className={`${mobileVis ? 'mobile-open' : ''}`}>
-        <li style={{ marginRight: 'auto' }}>Nicholas G</li>
-        <li><Link smooth to="home">Home</Link></li>
-        <li><Link smooth offset={-50} to="about">About</Link></li>
-        <li><Link smooth offset={-50} to="portfolio">Portfolio</Link></li>
+        <li style={{ marginRight: 'auto' }} className="item">Nicholas G</li>
+        <Link smooth to="title" onClick={() => setMobileVis(false)} className="item"><li>Home</li></Link>
+        <Link smooth offset={-50} to="about" onClick={() => setMobileVis(false)} className="item"><li>About</li></Link>
+        <Link smooth offset={-50} to="portfolio" onClick={() => setMobileVis(false)} className="item"><li>Portfolio</li></Link>
       </nav>
 
       <style jsx>{`
@@ -32,11 +32,13 @@ const NavBar = () => {
           position: absolute;
           top: 0;
           color: #def2f1;
+          z-index: 1000;
         }
 
-        nav > li {
+        nav :global(.item) {
           padding: 5px;
           cursor: pointer;
+          z-index: 1001;
         }
 
         @media only screen and (max-width: 500px) {
@@ -51,7 +53,7 @@ const NavBar = () => {
             position: fixed;
             top: 0;
             right: 20px;
-            z-index: 100;
+            z-index: 1001;
           }
 
           .show-navbar-icon > .icon-bar {
@@ -90,10 +92,10 @@ const NavBar = () => {
             visibility: visible;
             clip-path: circle(200vh at 90% -40%);
           }
-          nav > li:first-child {
+          nav :global(.item:first-child) {
             display: none;
           }
-          nav > li {
+          nav :global(.item) {
             line-height: 10vh;
           }
         }
