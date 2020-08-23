@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar';
 import About from '../components/About';
 import Portfolio from '../components/Portfolio';
 import Blog from '../components/Blog';
+import SEO from '../components/SEO';
 
 export default function Home() {
   return (
@@ -12,6 +13,8 @@ export default function Home() {
         <title>Nicholas G</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <SEO />
 
       <main>
         <Element name="title" className="title">
