@@ -1,5 +1,7 @@
+import SectionHeader from './SectionHeader';
+
 export default () => (
   <div>
-    Blog Post
+    <SectionHeader name="Portfolio" />
   </div>
 );

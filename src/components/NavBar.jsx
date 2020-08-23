@@ -34,7 +34,7 @@ export default () => {
           margin-bottom: auto;
           position: fixed;
           top: 0;
-          color: ${scrollY + 50 > windowHeight && !mobileVis ? ' #3aafa9' : '#def2f1'};
+          color: ${(scrollY + 50 > windowHeight) && !mobileVis ? ' #3aafa9' : '#def2f1'};
         }
 
         nav > li {

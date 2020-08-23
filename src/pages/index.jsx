@@ -28,9 +28,9 @@ export default function Home() {
           <Portfolio />
         </div>
 
-        <div className="section">
+        {/* <div className="section">
           <Blog />
-        </div>
+        </div> */}
 
       </main>
 
@@ -80,9 +80,9 @@ export default function Home() {
         }
 
         .section {
-          height: 100vh;
           width: 70vw;
-          margin: 0 auto;
+          margin: 100px auto;
+          position: relative;
         }
 
         @media only screen and (max-width: 500px) {
