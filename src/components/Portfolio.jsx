@@ -12,7 +12,7 @@ const Portfolio = () => {
     },
     {
       name: 'ScatterVolt Website',
-      link: 'https://dash.gaiusbot.me',
+      link: 'https://scattervolt.com',
       largeimg: '/images/scattervolt.jpg',
       smallimg: '/images/scattervolt.jpg',
       desc: "Worked with the client on creating a website to fit his needs. Used HTML, CSS and JavaScript to make the site and collaborated with a team of people using GitHub. New features have been constantly added such as e-commerce that I managed to the client's specifications. More recently I added a 'Staff Control Panel' using OAuth2 with a PHP Backend.",
