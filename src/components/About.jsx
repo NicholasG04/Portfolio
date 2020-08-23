@@ -2,7 +2,7 @@ import { DiReact, DiHtml5, DiCss3, DiJavascript1, DiGit, DiNginx, DiMongodb, DiL
 import { IconContext } from 'react-icons';
 import SectionHeader from './SectionHeader';
 
-export default () => (
+const About = () => (
   <div>
     <IconContext.Provider value={{ size: 'calc(4vw + 2em)' }}>
       <SectionHeader name="About" />
@@ -40,3 +40,5 @@ export default () => (
     </IconContext.Provider>
   </div>
 );
+
+export default About;

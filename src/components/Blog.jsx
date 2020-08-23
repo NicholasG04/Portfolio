@@ -2,8 +2,10 @@ export function getStaticProps() {
   // get stuff from json file of blog posts lol
 }
 
-export default () => (
+const Blog = () => (
   <div>
     Blog Post
   </div>
 );
+
+export default Blog;

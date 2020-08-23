@@ -1,4 +1,4 @@
-export default ({ name }) => (
+const SectionHeader = ({ name }) => (
   <>
 
     <h2>{name} //</h2>
@@ -11,3 +11,5 @@ export default ({ name }) => (
     </style>
   </>
 );
+
+export default SectionHeader;

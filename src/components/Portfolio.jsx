@@ -1,21 +1,21 @@
 import SectionHeader from './SectionHeader';
 import PortfolioCard from './PortfolioCard';
 
-export default () => {
+const Portfolio = () => {
   const cards = [
     {
       name: 'Gaius Cicereius Dashboard',
       link: 'https://dash.gaiusbot.me',
-      smallimg: 'https://cdn.discordapp.com/avatars/159744245517778945/49c364e9007f74c326287c50eca6919c.png',
-      largeimg: 'https://cdn.discordapp.com/avatars/159744245517778945/49c364e9007f74c326287c50eca6919c.png',
+      smallimg: '/images/gaiusdash.png',
+      largeimg: '/images/gaiusdash.png',
       desc: 'In order to help the more than 15 million users of a popular Discord bot, I am currently working with the developers to build a React (Next.js) web dashboard that allows users to control the functionality of the bot, as well as purchase the premium upgrade (using Stripe). This features OAuth2 login, a custom API and taught me a significant amount about React.',
     },
     {
       name: 'ScatterVolt Website',
       link: 'https://dash.gaiusbot.me',
-      smallimg: 'https://cdn.discordapp.com/avatars/159744245517778945/49c364e9007f74c326287c50eca6919c.png',
-      largeimg: 'https://cdn.discordapp.com/avatars/159744245517778945/49c364e9007f74c326287c50eca6919c.png',
-      desc: 'In order to help the more than 15 million users of a popular Discord bot, I am currently working with the developers to build a React (Next.js) web dashboard that allows users to control the functionality of the bot, as well as purchase the premium upgrade (using Stripe). This features OAuth2 login, a custom API and taught me a significant amount about React.',
+      largeimg: '/images/scattervolt.jpg',
+      smallimg: '/images/scattervolt.jpg',
+      desc: "Worked with the client on creating a website to fit his needs. Used HTML, CSS and JavaScript to make the site and collaborated with a team of people using GitHub. New features have been constantly added such as e-commerce that I managed to the client's specifications. More recently I added a 'Staff Control Panel' using OAuth2 with a PHP Backend.",
     },
   ];
 
@@ -37,3 +37,5 @@ export default () => {
     </div>
   );
 };
+
+export default Portfolio;

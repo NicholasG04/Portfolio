@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useScrollYPosition } from 'react-use-scroll-position';
 import { useWindowHeight } from '@react-hook/window-size';
 
-export default () => {
+const NavBar = () => {
   const [mobileVis, setMobileVis] = useState(false);
   const scrollY = useScrollYPosition();
   const windowHeight = useWindowHeight();
@@ -34,7 +34,7 @@ export default () => {
           margin-bottom: auto;
           position: fixed;
           top: 0;
-          color: ${(scrollY + 50 > windowHeight) && !mobileVis ? ' #3aafa9' : '#def2f1'};
+          color: ${(scrollY > windowHeight) && !mobileVis ? ' #3aafa9' : '#def2f1'};
         }
 
         nav > li {
@@ -69,3 +69,5 @@ export default () => {
     </>
   );
 };
+
+export default NavBar;

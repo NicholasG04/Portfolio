@@ -1,6 +1,6 @@
 import ModalImage from 'react-modal-image';
 
-export default ({ name, link, desc, smallimg, largeimg }) => (
+const PortfolioCard = ({ name, link, desc, smallimg, largeimg }) => (
   <>
     <div className="card">
       <ModalImage small={smallimg} large={largeimg} alt={name} hideDownload hideZoom />
@@ -35,3 +35,5 @@ export default ({ name, link, desc, smallimg, largeimg }) => (
     </style>
   </>
 );
+
+export default PortfolioCard;
