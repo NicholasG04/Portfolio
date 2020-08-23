@@ -5,7 +5,7 @@ const SectionHeader = ({ name }) => (
 
     <style jsx>{`
       h2 {
-        font-size: 4rem;
+        font-size: 3.2rem;
       }
     `}
     </style>

@@ -15,8 +15,7 @@
     "react-dom": "16.13.1",
     "react-icons": "^3.11.0",
     "react-modal-image": "^2.5.0",
-    "react-scroll": "^1.8.1",
-    "react-use-scroll-position": "^2.0.0"
+    "react-scroll": "^1.8.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
