@@ -1,0 +1,81 @@
+==================================================================
+https://keybase.io/nicholasg04
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://nicholasg.me
+  * I am nicholasg04 (https://keybase.io/nicholasg04) on keybase.
+  * I have a public key with fingerprint 059F DBB8 CF71 BC51 36A3  4DE3 291C 0F5B D792 DB0C
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101bca7e11d8ae376ed60415a151c87dc0e015faab1d0654ea0f4915ae160a37dcd0a",
+      "fingerprint": "059fdbb8cf71bc5136a34de3291c0f5bd792db0c",
+      "host": "keybase.io",
+      "key_id": "291c0f5bd792db0c",
+      "kid": "0101bca7e11d8ae376ed60415a151c87dc0e015faab1d0654ea0f4915ae160a37dcd0a",
+      "uid": "8e1f22c6559bc8799a0aa2e6ecdb9419",
+      "username": "nicholasg04"
+    },
+    "merkle_root": {
+      "ctime": 1598280111,
+      "hash_meta": "8441cece62729e6beb84c5b5131b9d0e356439c423a4120347dbcd070bf9c90e",
+      "seqno": 17368839
+    },
+    "revoke": {
+      "sig_ids": [
+        "037fb480d25d7ae1f9657d072a44af31081c14bee8a9ad034e485f6ec6bf621d0f"
+      ]
+    },
+    "service": {
+      "hostname": "nicholasg.me",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1598280116,
+  "expire_in": 157680000,
+  "prev": "9a574753b07b49b9ce8261e7fc3c0189aa35c3cf0db218fdc52acc69324f44a4",
+  "seqno": 20,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMKvAnicrVNbaB1FGD7RmrapaUsRoRAUF0KbehJmZmdmd05LlFQTxUstWIgYc5zL
+vzlrcnZPdzenuZgHa9GH0vqgWCH1llcjKRIavICljaZRq62IDxL1rSIoSYmKUqjO
+BkUoProvu7Pz/d9td+abbyw0NUR/1Pven3hyqeHTs2PDhfLeS7PjjorNqFMadwZh
+7QZDBtKsPBgap+QgjLDS0gOMjS/B9TgYjihmEjOsfc9oBAizQEqFDeKMgkQBFXYf
+MEfStQCDpFN0gjAagKSWhFGW0zIRGKV8HXiWnmGXS5cacInAGgVMGU8Qo5C2g5U4
+zSesOSVT6Ahj+84uymv2/gP/P/seXqPzAQeEaM6YUHZaCImkJMBBGyUoFjkwhSSS
+VbDoKNSVeEimA4g6E0WnCsngEJSTOM7yfnUW5ijMhE98hDG2GWVaKVchk7kUpViD
+Bk48IoArUD7VTNmOsBIGgcs4dYWmxJUUE+RSzyjr1UMqEFogsFZSOBjFVsFzue+7
+wlpIoB4PQq6ehgO2utQpPe4g1wsU9ZEhzHg2dyA48ywTkZTKwMXIxxpTBeBLIY1V
+AuqzwGbmKuDE1hY4T0zkakk91Gvk+be6voOOam6plsRZrOMhu1PJslpayovJRms5
+9BCo8t8kZRVGxv4pdqIOSRrGkY1hkdd3xosOjNTCBMphjmAe95G9ch2oW0ohmUc9
+5irkKSqU0OATjsELtKsR9oWULrOPATKKYD8wmhGpNRcuoYENT/8tkVjSTA5YTttc
+JLPhBJyJs2f61hUamgqNN92QH6FC08at/xyso1Pr/xxdGdlyqpc3Vje8sh1a2r++
+qp/Ztr9x14b+p6+E269Unnvr7nSyZ/arZvLs/Scqb29+can1nv7aLffNnN//zr5u
+H7/cdmB6ZvbDu5Y37Wnvf825t2Wmeb7twWubn3r+toc6d51b2fLG1IXu9u++XDmz
+8ZNju6/FrenW8TvNRwc/KL3UuWnq9qM/LHzR++jNC+82YbV85PBjKycu9PW82XGc
+tE1/NvfI7p3eybHuX7r2XV7PzyWv/jx5pPfjHe7Dey63LMkfd3S+d/LXW9nhrkt3
+vPDT1YXJ0vfyUPztanGxf7q5a2Qbufh6svy7mgvN5+TiN7/1LTau9iytjs3vnDu/
+d7G1/oA5dbyo1h07/RfW44Bx
+=PEvg
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nicholasg04
+
+==================================================================
