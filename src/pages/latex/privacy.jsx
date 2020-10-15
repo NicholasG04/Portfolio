@@ -2,10 +2,22 @@ const Privacy = () => (
   <>
     <div className="main">
       <h1>LaTeX Formatter - Privacy Policy</h1>
-      <p>Nicholas G, the operator of the Microsoft Teams 'LaTeX Formatter' bot (hereon referred to as 'the bot'), mandates that, in utilising such bot, you agree to the following privacy policy: </p>
-      <p>When you tag the bot on Microsoft Teams, you are sending the contents of the message to a server operated by Nicholas G for the process of formatting the message as an image from raw LaTeX. This data is not used for any other purpose, and is not stored persistently. Nicholas G only stores your data for the aforementioned processing purpose, and does not keep your data after it has been processed.</p>
+      <p>
+        Nicholas G, the operator of the Microsoft Teams 'LaTeX Formatter' bot
+        (hereon referred to as 'the bot'), mandates that, in utilising such bot,
+        you agree to the following privacy policy:{" "}
+      </p>
+      <p>
+        When you tag the bot on Microsoft Teams, you are sending the contents of
+        the message to a server operated by Nicholas G for the process of
+        formatting the message as an image from raw LaTeX. This data is not used
+        for any other purpose, and is not stored persistently. Nicholas G only
+        stores your data for the aforementioned processing purpose, and does not
+        keep your data after it has been processed.
+      </p>
     </div>
-    <style jsx>{`
+    <style jsx>
+      {`
     :global(html, body) {
       padding: 0;
       margin: 0;
