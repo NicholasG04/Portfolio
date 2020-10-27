@@ -1,7 +1,7 @@
 import BlogCard from './BlogCard';
 import SectionHeader from './SectionHeader';
 
-const Blog = ({ posts }) => (
+const Blog = ({ posts, eager }) => (
   <>
     <SectionHeader name="Blog" />
     <div className="blogPosts">
@@ -15,7 +15,6 @@ const Blog = ({ posts }) => (
           flex-flow: row wrap;
         }
         .post {
-          width: 350px;
           margin: 25px;
         }
       `}

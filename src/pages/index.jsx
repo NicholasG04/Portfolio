@@ -1,10 +1,10 @@
-import Head from 'next/head';
-import { Element, Link } from 'react-scroll';
+import { Element, Link, scroller } from 'react-scroll';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import About from '../components/About';
 import Portfolio from '../components/Portfolio';
 import Blog from '../components/Blog';
-import SEO from '../components/SEO';
 
 import { getAllPosts } from '../lib/graphcms';
 
@@ -19,13 +19,6 @@ export async function getStaticProps() {
 export default function Home({ posts }) {
   return (
     <div className="container">
-      <Head>
-        <title>Nicholas G</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <SEO />
-
       <main>
         <Element name="title" className="title">
           <NavBar />
@@ -34,37 +27,21 @@ export default function Home({ posts }) {
           <Link to="about" smooth offset={-50}><button style={{ cursor: 'pointer' }}>Let's Go</button></Link>
         </Element>
 
-        <Element name="about" className="section">
+        <Element name="about" className="section" id="about">
           <About />
         </Element>
 
-        <Element name="portfolio" className="section">
+        <Element name="portfolio" className="section" id="portfolio">
           <Portfolio />
         </Element>
 
-        <div className="section">
+        <Element name="blog" className="section" id="blog">
           <Blog posts={posts} />
-        </div>
+        </Element>
 
       </main>
 
       <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-          color: #17252a;
-          background-color: #def2f1;
-          overflow-x: hidden;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-
         .container {
           min-height: 100vh;
         }
@@ -113,6 +90,7 @@ export default function Home({ posts }) {
           width: 70vw;
           margin: 100px auto;
           position: relative;
+          min-width: 350px;
         }
 
         @media only screen and (max-width: 500px) {

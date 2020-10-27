@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-scroll';
+import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 
-const NavBar = () => {
+const NavBar = ({ dark = false }) => {
   const [mobileVis, setMobileVis] = useState(false);
-
+  const router = useRouter();
+  console.log(router.pathname !== '/');
   return (
     <>
 
@@ -14,10 +17,11 @@ const NavBar = () => {
       </div>
 
       <nav className={`${mobileVis ? 'mobile-open' : ''}`}>
-        <li style={{ marginRight: 'auto' }} className="item">Nicholas G</li>
-        <Link smooth to="title" onClick={() => setMobileVis(false)} className="item"><li>Home</li></Link>
-        <Link smooth offset={-50} to="about" onClick={() => setMobileVis(false)} className="item"><li>About</li></Link>
-        <Link smooth offset={-50} to="portfolio" onClick={() => setMobileVis(false)} className="item"><li>Portfolio</li></Link>
+        <NextLink href="/"><li style={{ marginRight: 'auto' }} className="item">Nicholas G</li></NextLink>
+        <NextLink href="/"><Link smooth to="title" onClick={() => setMobileVis(false)} className="item"><li>Home</li></Link></NextLink>
+        <NextLink href="/#about" scroll={false}><Link smooth to="about" onClick={() => setMobileVis(false)} className="item"><li>About</li></Link></NextLink>
+        <NextLink href="/#portfolio" scroll={router.pathname !== '/'}><Link smooth to="portfolio" onClick={() => setMobileVis(false)} className="item"><li>Portfolio</li></Link></NextLink>
+        <NextLink href="/#blog" scroll={router.pathname !== '/'}><Link smooth to="blog" onClick={() => setMobileVis(false)} className="item"><li>Blog</li></Link></NextLink>
       </nav>
 
       <style jsx>{`
@@ -31,7 +35,8 @@ const NavBar = () => {
           margin-bottom: auto;
           position: absolute;
           top: 0;
-          color: #def2f1;
+          left: 5vw;
+          color: ${dark ? '#3aafa9' : '#def2f1'};
           z-index: 1000;
         }
 
@@ -44,6 +49,8 @@ const NavBar = () => {
         @media only screen and (max-width: 500px) {
           nav {
             visibility: hidden;
+            left: 0;
+            color: #def2f1;
           }
           .show-navbar-icon {
             visibility: visible;
