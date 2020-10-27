@@ -1,11 +1,26 @@
-export function getStaticProps() {
-  // get stuff from json file of blog posts lol
-}
+import BlogCard from './BlogCard';
+import SectionHeader from './SectionHeader';
 
-const Blog = () => (
-  <div>
-    Blog Post
-  </div>
+const Blog = ({ posts }) => (
+  <>
+    <SectionHeader name="Blog" />
+    <div className="blogPosts">
+      {posts.map((post) => (
+        <BlogCard key={post.slug} slug={post.slug} title={post.title} date={post.date} excerpt={post.excerpt} coverImage={post.coverImage} />
+      ))}
+    </div>
+    <style jsx>{`
+        .blogPosts {
+          display: flex;
+          flex-flow: row wrap;
+        }
+        .post {
+          width: 350px;
+          margin: 25px;
+        }
+      `}
+    </style>
+  </>
 );
 
 export default Blog;

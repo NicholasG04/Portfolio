@@ -6,7 +6,17 @@ import Portfolio from '../components/Portfolio';
 import Blog from '../components/Blog';
 import SEO from '../components/SEO';
 
-export default function Home() {
+import { getAllPosts } from '../lib/graphcms';
+
+export async function getStaticProps() {
+  const posts = await getAllPosts();
+  return {
+    props: { posts },
+    revalidate: 60,
+  };
+}
+
+export default function Home({ posts }) {
   return (
     <div className="container">
       <Head>
@@ -32,9 +42,9 @@ export default function Home() {
           <Portfolio />
         </Element>
 
-        {/* <div className="section">
-          <Blog />
-        </div> */}
+        <div className="section">
+          <Blog posts={posts} />
+        </div>
 
       </main>
 
