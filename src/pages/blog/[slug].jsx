@@ -33,6 +33,9 @@ export default function BlogPost({ post, morePosts }) {
   if (!router.isFallback && !post) {
     return <ErrorPage statusCode={404} />;
   }
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
   return (
     <>
       <NextSeo

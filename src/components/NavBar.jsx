@@ -5,8 +5,6 @@ import { useRouter } from 'next/router';
 
 const NavBar = ({ dark = false }) => {
   const [mobileVis, setMobileVis] = useState(false);
-  const router = useRouter();
-  console.log(router.pathname !== '/');
   return (
     <>
 
@@ -19,9 +17,9 @@ const NavBar = ({ dark = false }) => {
       <nav className={`${mobileVis ? 'mobile-open' : ''}`}>
         <NextLink href="/"><li style={{ marginRight: 'auto' }} className="item">Nicholas G</li></NextLink>
         <NextLink href="/"><Link smooth to="title" onClick={() => setMobileVis(false)} className="item"><li>Home</li></Link></NextLink>
-        <NextLink href="/#about" scroll={false}><Link smooth to="about" onClick={() => setMobileVis(false)} className="item"><li>About</li></Link></NextLink>
-        <NextLink href="/#portfolio" scroll={router.pathname !== '/'}><Link smooth to="portfolio" onClick={() => setMobileVis(false)} className="item"><li>Portfolio</li></Link></NextLink>
-        <NextLink href="/#blog" scroll={router.pathname !== '/'}><Link smooth to="blog" onClick={() => setMobileVis(false)} className="item"><li>Blog</li></Link></NextLink>
+        <NextLink href="/#about"><Link smooth to="about" onClick={() => setMobileVis(false)} className="item"><li>About</li></Link></NextLink>
+        <NextLink href="/#portfolio"><Link smooth to="portfolio" onClick={() => setMobileVis(false)} className="item"><li>Portfolio</li></Link></NextLink>
+        <NextLink href="/#blog"><Link smooth to="blog" onClick={() => setMobileVis(false)} className="item"><li>Blog</li></Link></NextLink>
       </nav>
 
       <style jsx>{`
