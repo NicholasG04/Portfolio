@@ -7,7 +7,7 @@ export default function BlogCard({ slug, title, date, coverImage, excerpt }) {
       <div className="card">
         <div style={{ cursor: 'pointer' }}>
           <Link href={`/blog/${slug}`}>
-            <Image src={coverImage.url} alt="Represents the title of the blog" width={300} height={150} />
+            <a><Image src={coverImage.url} alt="Represents the title of the blog" width={300} height={150} /></a>
           </Link>
         </div>
         <Link href={`/blog/${slug}`}><h4 className="link">{title}</h4></Link>
