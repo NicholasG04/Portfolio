@@ -37,6 +37,61 @@
         "no-unused-expressions": "off",
         "react/jsx-no-target-blank": [2, {"allowReferrer": true}],
         "max-len": "off",
-        "no-underscore-dangle": "off"
-    }
+        "no-underscore-dangle": "off",
+        "import/no-unresolved": "off",
+        "import/extensions": "off"
+    },
+    "overrides": [
+        {
+          "files": ["*.{ts,tsx}"],
+          "parser": "@typescript-eslint/parser",
+          "extends": [
+              "plugin:@typescript-eslint/recommended"
+          ]
+          "env": {
+            "browser": true,
+            "es6": true
+        },
+        "extends": [
+            "eslint:recommended",
+            "plugin:react/recommended",
+            "plugin:react-hooks/recommended",
+            "prettier",
+            "prettier/react",
+            "airbnb"
+        ],
+        "globals": {
+            "Atomics": "readonly",
+            "SharedArrayBuffer": "readonly"
+        },
+        "parserOptions": {
+            "ecmaFeatures": {
+                "jsx": true
+            },
+            "ecmaVersion": 2018,
+            "sourceType": "module",
+            "project": "./tsconfig.json"
+        },
+        "plugins": [
+            "react",
+            "prettier",
+            "@typescript-eslint"
+        ],
+        "rules": {
+            "react/react-in-jsx-scope": 0,
+            "react/prop-types": 0,
+            "react/no-unescaped-entities": 0,
+            "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
+            "linebreak-style": "off",
+            "object-curly-newline": "off",
+            "react/jsx-one-expression-per-line": "off",
+            "no-unused-expressions": "off",
+            "react/jsx-no-target-blank": [2, {"allowReferrer": true}],
+            "max-len": "off",
+            "no-underscore-dangle": "off",
+            "import/no-unresolved": "off",
+            "import/extensions": "off"
+        },
+        }
+    ]
 }

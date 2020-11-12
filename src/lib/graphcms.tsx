@@ -10,15 +10,15 @@ interface Post {
   }
 }
 
-export async function getPostAndMoreBySlug(slug: string): Promise<{ post: Post; morePosts: Post[] }> {
+export async function getPostAndMoreBySlug(slug: string, preview: boolean): Promise<{ post: Post; morePosts: Post[] }> {
   const graphcms = new GraphQLClient(process.env.GRAPHCMS_PROJECT_API, {
     headers: {
-      authorization: `Bearer ${process.env.GRAPHCMS_PROD_AUTH_TOKEN}`,
+      authorization: `Bearer ${preview ? process.env.GRAPHCMS_DEV_AUTH_TOKEN : process.env.GRAPHCMS_PROD_AUTH_TOKEN}`,
     },
   });
   const { post, morePosts }: {post: Post; morePosts: Post[]} = await graphcms.request(`
-    query getPostAndMoreBySlug($slug: String!) {
-      post(where: {slug: $slug}) {
+    query getPostAndMoreBySlug($slug: String!, $stage: Stage!) {
+      post(stage: $stage, where: {slug: $slug}) {
         title
         slug
         date
@@ -56,7 +56,7 @@ export async function getPostAndMoreBySlug(slug: string): Promise<{ post: Post; 
         }
       }
     }
-  `, { slug });
+  `, { slug, stage: preview ? 'DRAFT' : 'PUBLISHED' });
   return { post, morePosts };
 }
 
@@ -113,46 +113,12 @@ export async function getPreviewPostBySlug(slug: string) {
       authorization: `Bearer ${process.env.GRAPHCMS_DEV_AUTH_TOKEN}`,
     },
   });
-  const { post, morePosts }: {post: Post; morePosts: Post[]} = await graphcms.request(`
-    query getPreviewPostBySlug($slug: String!) {
-      post(where: {slug: $slug}) {
-        title
+  const { post }: {post: {slug: string} } = await graphcms.request(`
+    query getPreviewPostBySlug($slug: String!, $stage: Stage!) {
+      post(where: {slug: $slug}, stage: $stage) {
         slug
-        date
-        content {
-          markdown
-        }
-        excerpt
-        coverImage {
-          url(transformation: {
-            image: {
-              resize: {
-                fit: crop,
-                width: 1000,
-                height: 500
-              }
-            }
-          })
-        }
-      }
-      morePosts: posts(orderBy: date_DESC, first: 2, where: {slug_not: $slug}) {
-        title
-        slug
-        date
-        excerpt
-        coverImage {
-          url(transformation: {
-            image: {
-              resize: {
-                fit: crop,
-                width: 300,
-                height: 150
-              }
-            }
-          })
-        }
       }
     }
-  `, {slug});
-  return { post, morePosts };
+  `, { slug, stage: 'DRAFT' });
+  return post;
 }
