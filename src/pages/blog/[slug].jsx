@@ -52,8 +52,8 @@ export default function BlogPost({ post, morePosts }) {
         {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
         <h1>{post.title} //</h1>
         <h3>{post.date.split('-').reverse().join('/')}</h3>
-        <div style={{ margin: '25px auto', width: '90vw', maxWidth: '90vw' }}>
-          <img className="coverImage" src={post.coverImage.url} width={1000} height={500} quality={100} priority style={{ margin: '0 auto', maxWidth: '70vw' }} />
+        <div style={{ margin: '25px auto', width: '70vw', maxWidth: '70vw' }}>
+          <Image className="coverImage" src={post.coverImage.url} width={1000} height={500} quality={100} priority />
         </div>
         <div>
           <ReactMarkdown>{post.content.markdown}</ReactMarkdown>
@@ -73,6 +73,7 @@ export default function BlogPost({ post, morePosts }) {
           flex-flow: column nowrap;
           width: 70vw;
           margin: 0 auto;
+          min-width: 350px;
         }
         h1 {
           font-size: 3rem;
@@ -82,6 +83,9 @@ export default function BlogPost({ post, morePosts }) {
         h3 {
           font-weight: normal;
           font-style: italic;
+        }
+        .morePosts {
+          min-width: 350px;
         }
         .morePosts > h4 {
           font-size: 2.4rem;
