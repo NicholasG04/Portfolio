@@ -59,7 +59,7 @@ export default function BlogPost({ post, morePosts }) {
           <ReactMarkdown>{post.content.markdown}</ReactMarkdown>
         </div>
         <div className="morePosts">
-          <h4>More Posts</h4>
+          {morePosts.length > 0 && <h4>More Posts</h4> }
           <div className="cards">
             {morePosts.map((post) => (
               <BlogCard slug={post.slug} title={post.title} date={post.date} excerpt={post.excerpt} coverImage={post.coverImage} />
