@@ -1,12 +1,22 @@
 import { GraphQLClient } from 'graphql-request';
 
-export async function getPostAndMoreBySlug(slug) {
+interface Post {
+  slug: string
+  title?: string
+  date?: string
+  excerpt?: string
+  coverImage?: {
+    url: string
+  }
+}
+
+export async function getPostAndMoreBySlug(slug: string): Promise<{ posts: Post[]; morePosts: Post[] }> {
   const graphcms = new GraphQLClient(process.env.GRAPHCMS_PROJECT_API, {
     headers: {
       authorization: `Bearer ${process.env.GRAPHCMS_PROD_AUTH_TOKEN}`,
     },
   });
-  const { post, morePosts } = await graphcms.request(`
+  const { post, morePosts }: {post: Post; morePosts: Post[]} = await graphcms.request(`
     query getPostAndMoreBySlug {
       post(where: {slug: "${slug}"}) {
         title
@@ -81,7 +91,7 @@ export async function getAllPosts() {
   return posts;
 }
 
-export async function getAllSlugs() {
+export async function getAllSlugs(): Promise<Post[]> {
   const graphcms = new GraphQLClient(process.env.GRAPHCMS_PROJECT_API, {
     headers: {
       authorization: `Bearer ${process.env.GRAPHCMS_PROD_AUTH_TOKEN}`,
