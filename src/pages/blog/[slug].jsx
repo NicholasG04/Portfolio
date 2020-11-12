@@ -61,8 +61,8 @@ export default function BlogPost({ post, morePosts }) {
         <div className="morePosts">
           {morePosts.length > 0 && <h4>More Posts</h4> }
           <div className="cards">
-            {morePosts.map((post) => (
-              <BlogCard slug={post.slug} title={post.title} date={post.date} excerpt={post.excerpt} coverImage={post.coverImage} />
+            {morePosts.map((otherPost) => (
+              <BlogCard slug={otherPost.slug} title={otherPost.title} date={otherPost.date} excerpt={otherPost.excerpt} coverImage={otherPost.coverImage} />
             ))}
           </div>
         </div>

@@ -1,6 +1,7 @@
 const SectionHeader = ({ name }) => (
   <>
 
+    {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
     <h2>{name} //</h2>
 
     <style jsx>{`

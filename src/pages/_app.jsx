@@ -23,6 +23,7 @@ export default function MyApp({ Component, pageProps }) {
           ],
         }}
       />
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <Component {...pageProps} />
       <style jsx global>{`
       html,

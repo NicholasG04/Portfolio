@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse} from 'next';
+import { NextApiRequest, NextApiResponse } from 'next';
 import { getPreviewPostBySlug } from '../../lib/graphcms';
 
 interface request extends NextApiRequest {
@@ -8,7 +8,7 @@ interface request extends NextApiRequest {
   }
 }
 
-export default async function preview(req: request, res: NextApiResponse) {
+export default async function preview(req: request, res: NextApiResponse): Promise<void> {
   if (req.query.secret !== process.env.GRAPHCMS_PREVIEW_SECRET || !req.query.slug) return res.status(401).json({ message: 'Invalid Token' });
   const post = await getPreviewPostBySlug(req.query.slug);
   if (!post) return res.status(401).json({ message: 'Invalid slug' });

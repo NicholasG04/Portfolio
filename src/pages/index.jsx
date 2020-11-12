@@ -1,6 +1,4 @@
-import { Element, Link, scroller } from 'react-scroll';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { Element, Link } from 'react-scroll';
 import NavBar from '../components/NavBar';
 import About from '../components/About';
 import Portfolio from '../components/Portfolio';

@@ -1,7 +1,7 @@
 import BlogCard from './BlogCard';
 import SectionHeader from './SectionHeader';
 
-const Blog = ({ posts, eager }) => (
+const Blog = ({ posts }) => (
   <>
     <SectionHeader name="Blog" />
     <div className="blogPosts">

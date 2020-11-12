@@ -60,7 +60,7 @@ export async function getPostAndMoreBySlug(slug: string, preview: boolean): Prom
   return { post, morePosts };
 }
 
-export async function getAllPosts() {
+export async function getAllPosts(): Promise<Post[]> {
   const graphcms = new GraphQLClient(process.env.GRAPHCMS_PROJECT_API, {
     headers: {
       authorization: `Bearer ${process.env.GRAPHCMS_PROD_AUTH_TOKEN}`,
@@ -107,7 +107,7 @@ export async function getAllSlugs(): Promise<Post[]> {
   return posts;
 }
 
-export async function getPreviewPostBySlug(slug: string) {
+export async function getPreviewPostBySlug(slug: string): Promise<{slug: string}> {
   const graphcms = new GraphQLClient(process.env.GRAPHCMS_PROJECT_API, {
     headers: {
       authorization: `Bearer ${process.env.GRAPHCMS_DEV_AUTH_TOKEN}`,

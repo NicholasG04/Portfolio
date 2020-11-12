@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-scroll';
 import NextLink from 'next/link';
-import { useRouter } from 'next/router';
 
 const NavBar = ({ dark = false }) => {
   const [mobileVis, setMobileVis] = useState(false);
