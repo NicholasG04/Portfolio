@@ -6,21 +6,21 @@ const About = () => (
   <div>
     <SectionHeader name="About" />
 
+    <p>Hello - I'm Nicholas. Currently engaging with new Web Development projects and Cyber Security challenges,
+      I aspire to become a full stack web developer and/or cyber security researcher!
+    </p>
+
     <ul className="socials">
       <li><a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/nicholas-g"><SiLinkedin /></a></li>
       <li><a target="_blank" rel="noopener noreferrer" href="https://twitter.com/WagwanNick"><SiTwitter /></a></li>
       <li><a target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/6710619/nicholasg04"><SiStackoverflow /></a></li>
     </ul>
 
-    <p>Hello - I'm Nicholas. Currently engaging with new Web Development projects and Cyber Security challenges,
-      I aspire to become a full stack web developer and/or cyber security researcher!
-    </p>
-
     <h3>Familiar Technologies</h3>
     <ul className="technologies">
-      <li><SiNextDotJs /></li>
       <li><DiHtml5 /></li>
       <li><DiCss3 /></li>
+      <li><SiNextDotJs /></li>
       <li><DiReact /></li>
       <li><DiJavascript1 /></li>
       <li><DiGit /></li>
@@ -47,9 +47,12 @@ const About = () => (
         height: calc(3vw + 2em);
         margin: 0 5px;
       }
+      .socials {
+        margin-top: -20px;
+      }
       .socials li :global(svg) {
-        width: calc(1vw + 2em);
-        height: calc(1vw + 2em);
+        width: calc(0.5vw + 2em);
+        height: calc(0.5vw + 2em);
         margin: 0 5px;
         color: #17252A;
       }
