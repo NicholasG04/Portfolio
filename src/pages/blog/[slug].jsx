@@ -25,6 +25,7 @@ export async function getStaticProps({ params, preview = false }) {
       post,
       morePosts,
     },
+    revalidate: 60,
   };
 }
 
