@@ -1,10 +1,17 @@
 import { DiReact, DiHtml5, DiCss3, DiJavascript1, DiGit, DiNginx, DiMongodb, DiLinux } from 'react-icons/di';
-import { SiNextDotJs } from 'react-icons/si';
+import { SiNextDotJs, SiLinkedin, SiTwitter, SiStackoverflow } from 'react-icons/si';
 import SectionHeader from './SectionHeader';
 
 const About = () => (
   <div>
     <SectionHeader name="About" />
+
+    <ul className="socials">
+      <li><a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/nicholas-g"><SiLinkedin /></a></li>
+      <li><a target="_blank" rel="noopener noreferrer" href="https://twitter.com/WagwanNick"><SiTwitter /></a></li>
+      <li><a target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/6710619/nicholasg04"><SiStackoverflow /></a></li>
+    </ul>
+
     <p>Hello - I'm Nicholas. Currently engaging with new Web Development projects and Cyber Security challenges,
       I aspire to become a full stack web developer and/or cyber security researcher!
     </p>
@@ -33,11 +40,21 @@ const About = () => (
         flex-flow: row wrap;
       }
       h3 {
-        font-size: calc(1vw + 2em);
+        font-size: calc(0.5vw + 2em);
       }
       .technologies li :global(svg) {
-        width: calc(4vw + 2em);
-        height: calc(4vw + 2em);
+        width: calc(3vw + 2em);
+        height: calc(3vw + 2em);
+        margin: 0 5px;
+      }
+      .socials li :global(svg) {
+        width: calc(1vw + 2em);
+        height: calc(1vw + 2em);
+        margin: 0 5px;
+        color: #17252A;
+      }
+      :global(svg:hover, svg:visited) {
+        color: #17252A;
       }
     `}
     </style>
