@@ -1,5 +1,6 @@
 import { DiReact, DiHtml5, DiCss3, DiJavascript1, DiGit, DiNginx, DiLinux, DiPhp } from 'react-icons/di';
 import { FaStripe, FaDiscord } from 'react-icons/fa';
+import { SiNextDotJs } from 'react-icons/si';
 import SectionHeader from './SectionHeader';
 import PortfolioCard from './PortfolioCard';
 
@@ -11,7 +12,7 @@ const Portfolio = () => {
       smallimg: '/images/gaiusdash.webp',
       largeimg: '/images/gaiusdash.webp',
       desc: 'In order to help the more than 15 million users of a popular Discord bot, I am currently working with the developers to build a React (Next.js) web dashboard that allows users to control the functionality of the bot, as well as purchase the premium upgrade (using Stripe). This features OAuth2 login, a custom API and taught me a significant amount about React.',
-      stack: [<DiReact />, <DiJavascript1 />, <DiCss3 />, <DiGit />, <DiNginx />, <DiLinux />, <FaStripe />, <FaDiscord />],
+      stack: [<SiNextDotJs />, <DiReact />, <DiJavascript1 />, <DiCss3 />, <DiGit />, <DiNginx />, <DiLinux />, <FaStripe />, <FaDiscord />],
     },
     {
       name: 'ScatterVolt Website',
