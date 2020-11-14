@@ -7,7 +7,7 @@ const PortfolioCard = ({ item: { name, link, desc, smallimg, largeimg, stack } }
       {link ? <a href={link} className="link" target="_blank" rel="noopener"><h4>{name}</h4></a>
         : <h4>{name}</h4>}
       <div className="stack">
-        {stack.map((tech) => <div className="technology">{tech}</div>)}
+        {stack.map((tech) => <div className="technology" key={tech.type.name}>{tech}</div>)}
       </div>
       <span>{desc}</span>
     </div>
