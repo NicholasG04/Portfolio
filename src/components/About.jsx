@@ -1,5 +1,4 @@
 import { DiReact, DiHtml5, DiCss3, DiJavascript1, DiGit, DiNginx, DiMongodb, DiLinux } from 'react-icons/di';
-import { IconContext } from 'react-icons';
 import SectionHeader from './SectionHeader';
 
 const About = () => (

@@ -24,6 +24,11 @@ export default function BlogCard({ slug, title, date, coverImage, excerpt }) {
         flex-flow: column nowrap;
         align-items: center;
         max-width: 350px;
+        transition: 0.3s;
+        box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.4);
+      }
+      .card:hover {
+        box-shadow: 0px 16px 32px 0 rgba(0,0,0,0.4);
       }
       .link, .link:visited {
         color: black;
