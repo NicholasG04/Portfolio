@@ -6,7 +6,7 @@ const Blog = ({ posts }) => (
     <SectionHeader name="Blog" />
     <div className="blogPosts">
       {posts.map((post) => (
-        <BlogCard key={post.slug} slug={post.slug} title={post.title} date={post.date} excerpt={post.excerpt} coverImage={post.coverImage} />
+        <BlogCard key={post.slug} card={post} />
       ))}
     </div>
     <style jsx>{`

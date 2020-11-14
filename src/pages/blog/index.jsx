@@ -24,7 +24,7 @@ export default function Home({ posts }) {
       <h1>Nicholas G - Blog //</h1>
       <div className="posts">
         {posts.map((post) => (
-          <BlogCard key={post.slug} slug={post.slug} title={post.title} excerpt={post.excerpt} coverImage={post.coverImage} date={post.date} />
+          <BlogCard key={post.slug} card={post} />
         ))}
       </div>
       <style jsx>{`

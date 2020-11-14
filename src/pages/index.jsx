@@ -22,7 +22,7 @@ export default function Home({ posts }) {
           <NavBar />
           <h1>Nicholas G</h1>
           <h2>A student passionate about Web Development and Cyber Security</h2>
-          <Link to="about" smooth offset={-50}><button style={{ cursor: 'pointer' }}>Let's Go</button></Link>
+          <Link to="about" smooth offset={-50}><button style={{ cursor: 'pointer' }} type="button">Let's Go</button></Link>
         </Element>
 
         <Element name="about" className="section" id="about">

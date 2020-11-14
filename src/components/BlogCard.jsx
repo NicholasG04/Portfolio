@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function BlogCard({ slug, title, date, coverImage, excerpt }) {
+export default function BlogCard({ card: { slug, title, date, coverImage, excerpt } }) {
   return (
     <>
       <div className="card">

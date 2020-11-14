@@ -1,6 +1,6 @@
 import ModalImage from 'react-modal-image';
 
-const PortfolioCard = ({ name, link, desc, smallimg, largeimg, stack }) => (
+const PortfolioCard = ({ item: { name, link, desc, smallimg, largeimg, stack } }) => (
   <>
     <div className="card">
       <ModalImage small={smallimg} large={largeimg} alt={name} hideDownload hideZoom />
