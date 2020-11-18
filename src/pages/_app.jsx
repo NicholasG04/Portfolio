@@ -10,11 +10,11 @@ export default function MyApp({ Component, pageProps }) {
       </Head>
       <DefaultSeo
         title="Nicholas G"
-        description="Personal Website and Portfolio of Nicholas G"
+        description="Personal Website, Portfolio and Blog of Nicholas G"
         openGraph={{
           url: 'https://nicholasg.me',
           title: 'Nicholas G',
-          description: 'Personal Website and Portfolio of Nicholas G',
+          description: 'Personal Website, Portfolio and Blog of Nicholas G',
           site_name: 'Nicholas G',
           images: [
             {
