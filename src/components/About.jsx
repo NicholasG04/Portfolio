@@ -1,5 +1,5 @@
 import { DiReact, DiHtml5, DiCss3, DiJavascript1, DiGit, DiNginx, DiMongodb, DiLinux } from 'react-icons/di';
-import { SiNextDotJs, SiLinkedin, SiTwitter, SiStackoverflow } from 'react-icons/si';
+import { SiNextDotJs, SiLinkedin, SiTwitter, SiStackoverflow, SiGithub } from 'react-icons/si';
 import SectionHeader from './SectionHeader';
 
 const About = () => (
@@ -14,6 +14,7 @@ const About = () => (
       <li><a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/nicholas-g"><SiLinkedin /></a></li>
       <li><a target="_blank" rel="noopener noreferrer" href="https://twitter.com/WagwanNick"><SiTwitter /></a></li>
       <li><a target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/6710619/nicholasg04"><SiStackoverflow /></a></li>
+      <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/NicholasG04"><SiGithub /></a></li>
     </ul>
 
     <h3>Familiar Technologies</h3>
