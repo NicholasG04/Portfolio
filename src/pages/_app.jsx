@@ -22,6 +22,9 @@ export default function MyApp({ Component, pageProps }) {
             },
           ],
         }}
+        twitter={{
+          cardType: 'summary',
+        }}
       />
       {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <Component {...pageProps} />
