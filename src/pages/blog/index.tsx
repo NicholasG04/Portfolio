@@ -1,17 +1,20 @@
 import { NextSeo } from 'next-seo';
+import { GetStaticProps } from 'next';
 import { getAllPosts } from '../../lib/graphcms';
 import BlogCard from '../../components/BlogCard';
 import NavBar from '../../components/NavBar';
+import { Post } from '../../lib/types';
 
-export async function getStaticProps() {
-  const posts = await getAllPosts();
+export const getStaticProps: GetStaticProps = async () => {
+  const posts: Post[] = await getAllPosts();
   return {
     props: { posts },
     revalidate: 60,
   };
-}
+};
 
-export default function Home({ posts }) {
+type HomeProps = { posts: Post[] }
+export default function Home({ posts }: HomeProps): JSX.Element {
   return (
     <>
       <NextSeo
@@ -23,7 +26,7 @@ export default function Home({ posts }) {
       <NavBar dark />
       <h1>Nicholas G - Blog //</h1>
       <div className="posts">
-        {posts.map((post) => (
+        {posts.map((post: Post) => (
           <BlogCard key={post.slug} card={post} />
         ))}
       </div>

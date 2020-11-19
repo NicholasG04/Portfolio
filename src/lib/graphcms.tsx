@@ -1,14 +1,5 @@
 import { GraphQLClient } from 'graphql-request';
-
-interface Post {
-  slug: string
-  title?: string
-  date?: string
-  excerpt?: string
-  coverImage?: {
-    url: string
-  }
-}
+import { Post } from './types';
 
 export async function getPostAndMoreBySlug(slug: string, preview: boolean): Promise<{ post: Post; morePosts: Post[] }> {
   const graphcms = new GraphQLClient(process.env.GRAPHCMS_PROJECT_API, {

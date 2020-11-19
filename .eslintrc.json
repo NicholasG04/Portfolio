@@ -79,7 +79,7 @@
               "react/react-in-jsx-scope": 0,
               "react/prop-types": 0,
               "react/no-unescaped-entities": 0,
-              "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
+              "react/jsx-filename-extension": [1, {"extensions": [".ts", ".tsx"]}],
               "linebreak-style": "off",
               "object-curly-newline": "off",
               "react/jsx-one-expression-per-line": "off",
