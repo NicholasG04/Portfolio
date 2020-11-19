@@ -3,17 +3,17 @@ import { GetStaticProps } from 'next';
 import { getAllPosts } from '../../lib/graphcms';
 import BlogCard from '../../components/BlogCard';
 import NavBar from '../../components/NavBar';
-import { Post } from '../../lib/types';
+import { CardPost } from '../../lib/types';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts: Post[] = await getAllPosts();
+  const posts: CardPost[] = await getAllPosts();
   return {
     props: { posts },
     revalidate: 60,
   };
 };
 
-type HomeProps = { posts: Post[] }
+type HomeProps = { posts: CardPost[] }
 export default function Home({ posts }: HomeProps): JSX.Element {
   return (
     <>
@@ -26,7 +26,7 @@ export default function Home({ posts }: HomeProps): JSX.Element {
       <NavBar dark />
       <h1>Nicholas G - Blog //</h1>
       <div className="posts">
-        {posts.map((post: Post) => (
+        {posts.map((post: CardPost) => (
           <BlogCard key={post.slug} card={post} />
         ))}
       </div>

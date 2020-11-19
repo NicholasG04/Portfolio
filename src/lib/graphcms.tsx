@@ -1,13 +1,13 @@
 import { GraphQLClient } from 'graphql-request';
-import { Post } from './types';
+import { Post, CardPost, MainPost } from './types';
 
-export async function getPostAndMoreBySlug(slug: string, preview: boolean): Promise<{ post: Post; morePosts: Post[] }> {
+export async function getPostAndMoreBySlug(slug: string, preview: boolean): Promise<{ post: MainPost; morePosts: CardPost[] }> {
   const graphcms = new GraphQLClient(process.env.GRAPHCMS_PROJECT_API, {
     headers: {
       authorization: `Bearer ${preview ? process.env.GRAPHCMS_DEV_AUTH_TOKEN : process.env.GRAPHCMS_PROD_AUTH_TOKEN}`,
     },
   });
-  const { post, morePosts }: {post: Post; morePosts: Post[]} = await graphcms.request(`
+  const { post, morePosts }: {post: MainPost; morePosts: CardPost[]} = await graphcms.request(`
     query getPostAndMoreBySlug($slug: String!, $stage: Stage!) {
       post(stage: $stage, where: {slug: $slug}) {
         title
@@ -51,7 +51,7 @@ export async function getPostAndMoreBySlug(slug: string, preview: boolean): Prom
   return { post, morePosts };
 }
 
-export async function getAllPosts(): Promise<Post[]> {
+export async function getAllPosts(): Promise<CardPost[]> {
   const graphcms = new GraphQLClient(process.env.GRAPHCMS_PROJECT_API, {
     headers: {
       authorization: `Bearer ${process.env.GRAPHCMS_PROD_AUTH_TOKEN}`,
