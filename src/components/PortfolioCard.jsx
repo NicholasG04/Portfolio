@@ -41,7 +41,9 @@ const PortfolioCard = ({ item: { name, link, desc, smallimg, largeimg, stack } }
       }
       .stack {
         display: flex;
+        flex-flow: row wrap;
         font-size: 2rem;
+        justify-content: center;
       }
       .stack > .technology {
         margin: 0 2px;
