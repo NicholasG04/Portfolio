@@ -17,12 +17,12 @@
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-icons": "^3.11.0",
-    "react-markdown": "^5.0.2",
+    "react-markdown": "^5.0.3",
     "react-modal-image": "^2.5.0",
     "react-scroll": "^1.8.1"
   },
   "devDependencies": {
-    "@types/node": "^14.14.8",
+    "@types/node": "^14.14.9",
     "@types/react": "^16.9.56",
     "@typescript-eslint/eslint-plugin": "^4.7.0",
     "@typescript-eslint/parser": "^4.8.1",
@@ -37,6 +37,6 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.1.2",
-    "typescript": "^4.0.5"
+    "typescript": "^4.1.2"
   }
 }
