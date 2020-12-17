@@ -11,7 +11,7 @@
   "dependencies": {
     "@react-hook/window-size": "^3.0.7",
     "graphql": "^15.4.0",
-    "graphql-request": "^3.3.0",
+    "graphql-request": "^3.4.0",
     "next": "^10.0.3",
     "next-seo": "^4.17.0",
     "react": "16.14.0",
