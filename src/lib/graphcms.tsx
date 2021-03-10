@@ -104,7 +104,7 @@ export async function getPreviewPostBySlug(slug: string): Promise<{slug: string}
       authorization: `Bearer ${process.env.GRAPHCMS_DEV_AUTH_TOKEN}`,
     },
   });
-  const { post }: {post: {slug: string} } = await graphcms.request(`
+  const { post }: { post: { slug: string } } = await graphcms.request(`
     query getPreviewPostBySlug($slug: String!, $stage: Stage!) {
       post(where: {slug: $slug}, stage: $stage) {
         slug

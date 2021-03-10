@@ -19,6 +19,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params, preview = false }) {
   const { post, morePosts } = await getPostAndMoreBySlug(params.slug, preview);
+  
   return {
     props: {
       preview,
@@ -63,7 +64,7 @@ export default function BlogPost({ post, morePosts }) {
           {morePosts.length > 0 && <h4>More Posts</h4> }
           <div className="cards">
             {morePosts.map((otherPost) => (
-              <BlogCard slug={otherPost.slug} title={otherPost.title} date={otherPost.date} excerpt={otherPost.excerpt} coverImage={otherPost.coverImage} />
+              <BlogCard key={otherPost.slug} card={otherPost} />
             ))}
           </div>
         </div>
