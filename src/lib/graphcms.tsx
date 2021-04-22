@@ -59,7 +59,7 @@ export async function getAllPosts(): Promise<CardPost[]> {
   });
   const { posts } = await graphcms.request(`
     query getAllPosts {
-      posts {
+      posts(orderBy: date_DESC) {
         title
         slug
         date
