@@ -9,6 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@happykit/analytics": "^1.0.1",
     "@react-hook/window-size": "^3.0.7",
     "graphql": "^15.5.0",
     "graphql-request": "^3.4.0",
