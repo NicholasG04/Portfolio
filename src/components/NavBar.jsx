@@ -7,7 +7,7 @@ const NavBar = ({ dark = false }) => {
   return (
     <>
 
-      <div className={`show-navbar-icon ${mobileVis ? 'navbar-active' : ''}`} onClick={() => setMobileVis(!mobileVis)} role="button">
+      <div tabIndex={0} className={`show-navbar-icon ${mobileVis ? 'navbar-active' : ''}`} onClick={() => setMobileVis(!mobileVis)} onKeyPress={() => setMobileVis(!mobileVis)} role="button">
         <div className="icon-bar" />
         <div className="icon-bar" />
         <div className="icon-bar" />
