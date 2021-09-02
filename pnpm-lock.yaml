@@ -18,7 +18,7 @@ specifiers:
   graphql: ^15.5.0
   graphql-request: ^3.4.0
   next: ^10.2.0
-  next-seo: ^4.24.0
+  next-seo: ^4.26.0
   prettier: ^2.2.1
   react: ^17.0.2
   react-dom: ^17.0.2
@@ -34,7 +34,7 @@ dependencies:
   graphql: 15.5.0
   graphql-request: 3.4.0_graphql@15.5.0
   next: 10.2.0_507781d099a67956587e23f5ac79078b
-  next-seo: 4.24.0_3a7f9b0847035abd95643f9e1809652e
+  next-seo: 4.26.0_3a7f9b0847035abd95643f9e1809652e
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-icons: 4.2.0_react@17.0.2
@@ -2336,12 +2336,12 @@ packages:
     resolution: {integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=}
     dev: true
 
-  /next-seo/4.24.0_3a7f9b0847035abd95643f9e1809652e:
-    resolution: {integrity: sha512-9VQXfXAelhE+hAWzJ4azigQaW3FPX0kU0eYKFQXKsQjgY7AWtukjRGXls0oSIk8khhDJwmCt46EwsO9n5DDW6Q==}
+  /next-seo/4.26.0_3a7f9b0847035abd95643f9e1809652e:
+    resolution: {integrity: sha512-5TqywQ3XAwqdmEU1AyNZjR7WdDKFTkDD8aBtgQelPvzBUEy8i0mTjtiw+09jhiHFNik6FqS8uPKCaYcY6jRgSQ==}
     peerDependencies:
-      next: ^8.1.1-canary.54 || ^9.0.0 || ^10.0.0
-      react: ^16.0.0 || ^17.0.0
-      react-dom: ^16.0.0 || ^17.0.0
+      next: ^8.1.1-canary.54 || >=9.0.0
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
     dependencies:
       next: 10.2.0_507781d099a67956587e23f5ac79078b
       react: 17.0.2

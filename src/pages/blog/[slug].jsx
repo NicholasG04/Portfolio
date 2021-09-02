@@ -61,8 +61,8 @@ export default function BlogPost({ post, morePosts }) {
         {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
         <h1>{post.title} //</h1>
         <h3>{post.date.split('-').reverse().join('/')}</h3>
-        <div style={{ margin: '25px 0', height: '500px', maxWidth: '70vw', position: 'relative' }}>
-          <Image className="coverImage" src={post.coverImage.url} objectFit="contain" objectPosition="left" layout="fill" quality={100} priority />
+        <div style={{ margin: '25px 0' }}>
+          <Image className="coverImage" width={post.coverImage.width} height={post.coverImage.height} sizes="70vw" layout="responsive" src={post.coverImage.url} quality={100} priority />
         </div>
         <div>
           <ReactMarkdown>{post.content.markdown}</ReactMarkdown>
