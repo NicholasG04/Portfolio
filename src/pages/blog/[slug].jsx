@@ -47,6 +47,13 @@ export default function BlogPost({ post, morePosts }) {
           url: `https://nicholasg.me/blog/${post.slug}`,
           title: `${post.title} | Nicholas G`,
           description: post.excerpt,
+          images: [post.coverImage.url],
+        }}
+        twitter={{
+          cardType: 'summary_large_image',
+          title: `${post.title} | Nicholas G`,
+          description: post.excerpt,
+          image: post.coverImage.url,
         }}
       />
       <div className="main">
