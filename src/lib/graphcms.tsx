@@ -1,13 +1,13 @@
-import { GraphQLClient } from 'graphql-request';
+import { GraphQLClient, gql } from 'graphql-request';
 import { Post, CardPost, MainPost } from './types';
 
 export async function getPostAndMoreBySlug(slug: string, preview: boolean): Promise<{ post: MainPost; morePosts: CardPost[] }> {
   const graphcms = new GraphQLClient(process.env.GRAPHCMS_PROJECT_API, {
     headers: {
-      authorization: `Bearer ${preview ? process.env.GRAPHCMS_DEV_AUTH_TOKEN : process.env.GRAPHCMS_PROD_AUTH_TOKEN}`,
+      authorization: `Bearer ${preview || process.env.NODE_ENV === 'development' ? process.env.GRAPHCMS_DEV_AUTH_TOKEN : process.env.GRAPHCMS_PROD_AUTH_TOKEN}`,
     },
   });
-  const { post, morePosts }: {post: MainPost; morePosts: CardPost[]} = await graphcms.request(`
+  const query = gql`
     query getPostAndMoreBySlug($slug: String!, $stage: Stage!) {
       post(stage: $stage, where: {slug: $slug}) {
         title
@@ -21,12 +21,13 @@ export async function getPostAndMoreBySlug(slug: string, preview: boolean): Prom
           url(transformation: {
             image: {
               resize: {
-                fit: crop,
-                width: 1000,
+                fit: scale,
                 height: 500
               }
             }
           })
+          width
+          height
         }
       }
       morePosts: posts(orderBy: date_DESC, first: 2, where: {slug_not: $slug}) {
@@ -38,7 +39,7 @@ export async function getPostAndMoreBySlug(slug: string, preview: boolean): Prom
           url(transformation: {
             image: {
               resize: {
-                fit: crop,
+                fit: clip,
                 width: 300,
                 height: 150
               }
@@ -47,17 +48,19 @@ export async function getPostAndMoreBySlug(slug: string, preview: boolean): Prom
         }
       }
     }
-  `, { slug, stage: preview ? 'DRAFT' : 'PUBLISHED' });
+  `;
+  const variables = { slug, stage: preview || process.env.NODE_ENV === 'development' ? 'DRAFT' : 'PUBLISHED' };
+  const { post, morePosts }: {post: MainPost; morePosts: CardPost[]} = await graphcms.request(query, variables);
   return { post, morePosts };
 }
 
 export async function getAllPosts(): Promise<CardPost[]> {
   const graphcms = new GraphQLClient(process.env.GRAPHCMS_PROJECT_API, {
     headers: {
-      authorization: `Bearer ${process.env.GRAPHCMS_PROD_AUTH_TOKEN}`,
+      authorization: `Bearer ${process.env.NODE_ENV === 'development' ? process.env.GRAPHCMS_DEV_AUTH_TOKEN : process.env.GRAPHCMS_PROD_AUTH_TOKEN}`,
     },
   });
-  const { posts } = await graphcms.request(`
+  const query = gql`
     query getAllPosts {
       posts(orderBy: date_DESC) {
         title
@@ -68,7 +71,7 @@ export async function getAllPosts(): Promise<CardPost[]> {
           url(transformation: {
             image: {
               resize: {
-                fit: crop,
+                fit: clip,
                 width: 300,
                 height: 150
               }
@@ -77,39 +80,42 @@ export async function getAllPosts(): Promise<CardPost[]> {
         }
       }
     }
-  `);
+  `;
+  const { posts }: { posts: CardPost[] } = await graphcms.request(query);
 
   return posts;
 }
 
-export async function getAllSlugs(): Promise<Post[]> {
+export async function getAllSlugs(): Promise<Pick<Post, 'slug'>[]> {
   const graphcms = new GraphQLClient(process.env.GRAPHCMS_PROJECT_API, {
     headers: {
-      authorization: `Bearer ${process.env.GRAPHCMS_PROD_AUTH_TOKEN}`,
+      authorization: `Bearer ${process.env.NODE_ENV === 'development' ? process.env.GRAPHCMS_DEV_AUTH_TOKEN : process.env.GRAPHCMS_PROD_AUTH_TOKEN}`,
     },
   });
-  const { posts } = await graphcms.request(`
+  const query = gql`
     query getAllSlugs {
       posts {
         slug
       }
     }
-  `);
+    `;
+  const { posts }: { posts: Pick<Post, 'slug'>[] } = await graphcms.request(query);
   return posts;
 }
 
-export async function getPreviewPostBySlug(slug: string): Promise<{slug: string}> {
+export async function getPreviewPostBySlug(slug: string): Promise<Pick<Post, 'slug'>> {
   const graphcms = new GraphQLClient(process.env.GRAPHCMS_PROJECT_API, {
     headers: {
       authorization: `Bearer ${process.env.GRAPHCMS_DEV_AUTH_TOKEN}`,
     },
   });
-  const { post }: { post: { slug: string } } = await graphcms.request(`
+  const query = gql`
     query getPreviewPostBySlug($slug: String!, $stage: Stage!) {
       post(where: {slug: $slug}, stage: $stage) {
         slug
       }
     }
-  `, { slug, stage: 'DRAFT' });
+  `;
+  const { post }: { post: Pick<Post, 'slug'> } = await graphcms.request(query, { slug, stage: 'DRAFT' });
   return post;
 }

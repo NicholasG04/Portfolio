@@ -11,10 +11,10 @@ const About = () => (
     </p>
 
     <ul className="socials">
-      <li><a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/nicholas-g"><SiLinkedin /></a></li>
-      <li><a target="_blank" rel="noopener noreferrer" href="https://twitter.com/WagwanNick"><SiTwitter /></a></li>
-      <li><a target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/6710619/nicholasg04"><SiStackoverflow /></a></li>
-      <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/NicholasG04"><SiGithub /></a></li>
+      <li><a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/nicholas-g" label="LinkedIn"><SiLinkedin /></a></li>
+      <li><a target="_blank" rel="noopener noreferrer" href="https://twitter.com/WagwanNick" label="Twitter"><SiTwitter /></a></li>
+      <li><a target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/6710619/nicholasg04" label="StackOverflow"><SiStackoverflow /></a></li>
+      <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/NicholasG04" label="GitHub"><SiGithub /></a></li>
     </ul>
 
     <h3>Familiar Technologies</h3>

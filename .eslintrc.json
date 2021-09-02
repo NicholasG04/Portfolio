@@ -7,8 +7,6 @@
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
-        "prettier",
-        "prettier/react",
         "airbnb"
     ],
     "globals": {
@@ -23,8 +21,7 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
-        "prettier"
+        "react"
     ],
     "rules": {
         "react/react-in-jsx-scope": 0,
@@ -39,7 +36,8 @@
         "max-len": "off",
         "no-underscore-dangle": "off",
         "import/no-unresolved": "off",
-        "import/extensions": "off"
+        "import/extensions": "off",
+        "jsx-a11y/anchor-is-valid": "off"
     },
     "overrides": [
         {
@@ -53,8 +51,6 @@
               "eslint:recommended",
               "plugin:react/recommended",
               "plugin:react-hooks/recommended",
-              "prettier",
-              "prettier/react",
               "airbnb",
               "plugin:@typescript-eslint/recommended"
           ],
@@ -72,7 +68,6 @@
           },
           "plugins": [
               "react",
-              "prettier",
               "@typescript-eslint"
           ],
           "rules": {
@@ -88,7 +83,8 @@
               "max-len": "off",
               "no-underscore-dangle": "off",
               "import/no-unresolved": "off",
-              "import/extensions": "off"
+              "import/extensions": "off",
+              "jsx-a11y/anchor-is-valid": "off"
           }
         }
     ]

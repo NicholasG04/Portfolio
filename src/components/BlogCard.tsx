@@ -8,9 +8,16 @@ export default function BlogCard({ card: { slug, title, date, coverImage, excerp
     <>
       <div className="card">
         <div style={{ cursor: 'pointer' }}>
-          <Link href={`/blog/${slug}`}>
-            <a><Image src={coverImage.url} alt="Represents the title of the blog" width={300} height={150} /></a>
-          </Link>
+          {coverImage?.url
+            && (
+            <Link href={`/blog/${slug}`}>
+              <a>
+                <div style={{ height: '150px', width: '300px', position: 'relative' }}>
+                  <Image src={coverImage.url} alt="Represents the title of the blog" objectFit="contain" layout="fill" />
+                </div>
+              </a>
+            </Link>
+            )}
         </div>
         <Link href={`/blog/${slug}`}><h4 className="link">{title}</h4></Link>
         <span>{date.split('-').reverse().join('/')}</span>
