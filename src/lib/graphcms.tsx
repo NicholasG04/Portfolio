@@ -1,6 +1,12 @@
 import { GraphQLClient, gql } from 'graphql-request';
 import { Post, CardPost, MainPost } from './types';
 
+declare const process: {
+  env: {
+    [key: string]: string;
+  }
+};
+
 export async function getPostAndMoreBySlug(slug: string, preview: boolean): Promise<{ post: MainPost; morePosts: CardPost[] }> {
   const graphcms = new GraphQLClient(process.env.GRAPHCMS_PROJECT_API, {
     headers: {
