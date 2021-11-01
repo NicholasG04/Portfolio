@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { CardPost } from '../lib/types';
 
 type BlogCardType = { card: CardPost }
-export default function BlogCard({ card: { slug, title, date, coverImage, excerpt } }: BlogCardType): JSX.Element {
+export default function BlogCard({ card: { slug, title, date, coverImage, excerpt } }: BlogCardType) {
   return (
     <>
       <div className="card">

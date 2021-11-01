@@ -37,8 +37,8 @@ const Portfolio = () => {
     <div>
       <SectionHeader name="Portfolio" />
       <div className="cards">
-        {cards.map((item, index) => (
-          <PortfolioCard item={item} key={index} />
+        {cards.map((item) => (
+          <PortfolioCard item={item} key={item.link} />
         ))}
       </div>
       <style jsx>{`

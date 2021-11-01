@@ -14,7 +14,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 type HomeProps = { posts: CardPost[] }
-export default function Home({ posts }: HomeProps): JSX.Element {
+export default function Home({ posts }: HomeProps) {
   return (
     <>
       <NextSeo

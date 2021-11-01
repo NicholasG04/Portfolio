@@ -15,5 +15,5 @@ export default async function preview(req: request, res: NextApiResponse): Promi
 
   res.setPreviewData({});
 
-  res.writeHead(307, { Location: `/blog/${post.slug}` }).end();
+  return res.writeHead(307, { Location: `/blog/${post.slug}` }).end();
 }
