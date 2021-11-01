@@ -1,5 +1,5 @@
 import { DiReact, DiHtml5, DiCss3, DiJavascript1, DiGit, DiNginx, DiMongodb, DiLinux } from 'react-icons/di';
-import { SiNextDotJs, SiLinkedin, SiTwitter, SiStackoverflow, SiGithub } from 'react-icons/si';
+import { SiNextdotjs, SiLinkedin, SiTwitter, SiStackoverflow, SiGithub } from 'react-icons/si';
 import SectionHeader from './SectionHeader';
 
 const About = () => (
@@ -21,7 +21,7 @@ const About = () => (
     <ul className="technologies">
       <li><DiHtml5 /></li>
       <li><DiCss3 /></li>
-      <li><SiNextDotJs /></li>
+      <li><SiNextdotjs /></li>
       <li><DiReact /></li>
       <li><DiJavascript1 /></li>
       <li><DiGit /></li>
