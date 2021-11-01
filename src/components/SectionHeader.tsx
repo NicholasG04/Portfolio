@@ -1,4 +1,4 @@
-const SectionHeader = ({ name }) => (
+const SectionHeader = ({ name }: { name: string }) => (
   <>
 
     {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
