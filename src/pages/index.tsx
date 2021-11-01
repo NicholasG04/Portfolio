@@ -5,6 +5,7 @@ import Portfolio from '../components/Portfolio';
 import Blog from '../components/Blog';
 
 import { getAllPosts } from '../lib/graphcms';
+import type { CardPost } from '../lib/types';
 
 export async function getStaticProps() {
   const posts = await getAllPosts();
@@ -14,7 +15,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ posts }) {
+export default function Home({ posts }: { posts: CardPost[] }) {
   return (
     <div className="container">
       <main>

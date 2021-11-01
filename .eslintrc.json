@@ -51,8 +51,8 @@
               "eslint:recommended",
               "plugin:react/recommended",
               "plugin:react-hooks/recommended",
-              "airbnb",
-              "plugin:@typescript-eslint/recommended"
+              "plugin:@typescript-eslint/recommended",
+              "airbnb"
           ],
           "globals": {
               "Atomics": "readonly",
@@ -84,7 +84,8 @@
               "no-underscore-dangle": "off",
               "import/no-unresolved": "off",
               "import/extensions": "off",
-              "jsx-a11y/anchor-is-valid": "off"
+              "jsx-a11y/anchor-is-valid": "off",
+              "@typescript-eslint/explicit-module-boundary-types": "off"
           }
         }
     ]

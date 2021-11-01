@@ -3,9 +3,11 @@ import ErrorPage from 'next/error';
 import { NextSeo } from 'next-seo';
 import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
+import type { GetStaticProps } from 'next';
 import { getPostAndMoreBySlug, getAllSlugs } from '../../lib/graphcms';
 import NavBar from '../../components/NavBar';
 import BlogCard from '../../components/BlogCard';
+import { CardPost, MainPost } from '../../lib/types';
 
 export async function getStaticPaths() {
   const posts = await getAllSlugs();
@@ -17,8 +19,18 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params, preview = false }) {
-  const { post, morePosts } = await getPostAndMoreBySlug(params.slug, preview);
+interface Props {
+  post: MainPost;
+  morePosts: CardPost[]
+}
+
+type Params = {
+  slug: string
+}
+
+export const getStaticProps: GetStaticProps<Props, Params> = async ({ params, preview = false }) => {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const { post, morePosts } = await getPostAndMoreBySlug(params!.slug, preview);
 
   return {
     props: {
@@ -28,9 +40,9 @@ export async function getStaticProps({ params, preview = false }) {
     },
     revalidate: 60,
   };
-}
+};
 
-export default function BlogPost({ post, morePosts }) {
+export default function BlogPost({ post, morePosts }: Props) {
   const router = useRouter();
   if (!router.isFallback && !post) {
     return <ErrorPage statusCode={404} />;
@@ -47,13 +59,7 @@ export default function BlogPost({ post, morePosts }) {
           url: `https://nicholasg.me/blog/${post.slug}`,
           title: `${post.title} | Nicholas G`,
           description: post.excerpt,
-          images: [post.coverImage.url],
-        }}
-        twitter={{
-          cardType: 'summary_large_image',
-          title: `${post.title} | Nicholas G`,
-          description: post.excerpt,
-          image: post.coverImage.url,
+          images: [{ url: post.coverImage.url }],
         }}
       />
       <div className="main">

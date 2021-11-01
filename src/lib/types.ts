@@ -28,6 +28,8 @@ export interface MainPost {
   excerpt: string
   coverImage: {
     url: string
+    width: number;
+    height: number;
   }
   content: {
     markdown: string;

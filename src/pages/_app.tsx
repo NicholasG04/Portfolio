@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
 import { useAnalytics } from '@happykit/analytics';
+import { AppProps } from 'next/app';
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   useAnalytics({ publicKey: 'analytics_pub_8d944e8f56' });
 
   return (
