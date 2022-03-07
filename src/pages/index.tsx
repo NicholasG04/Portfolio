@@ -21,9 +21,9 @@ export default function Home({ posts }: { posts: CardPost[] }) {
       <main>
         <Element name="title" className="title">
           <NavBar />
-          <h1>Nicholas G</h1>
-          <h2>A student passionate about Web Development and Cyber Security</h2>
-          <Link to="about" smooth offset={-50}><button style={{ cursor: 'pointer' }} type="button">Let's Go</button></Link>
+          <h1>Nicholas G (2004-2022)</h1>
+          <h2>A student passing away</h2>
+          <Link to="about" smooth offset={-50}><button style={{ cursor: 'pointer' }} type="button">Let Go</button></Link>
         </Element>
 
         <Element name="about" className="section" id="about">
