@@ -23,7 +23,7 @@
     "react-scroll": "^1.8.2"
   },
   "devDependencies": {
-    "@types/node": "^15.0.2",
+    "@types/node": "^17.0.30",
     "@types/react": "^17.0.4",
     "@types/react-scroll": "^1.8.3",
     "@typescript-eslint/eslint-plugin": "^4.22.1",
