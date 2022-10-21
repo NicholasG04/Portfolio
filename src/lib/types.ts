@@ -35,3 +35,12 @@ export interface MainPost {
     markdown: string;
   }
 }
+
+export interface PortfolioCardType {
+  name: string;
+  link: string;
+  smallimg: string;
+  largeimg: string;
+  desc: string;
+  stack: JSX.Element[];
+}

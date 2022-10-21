@@ -4,19 +4,10 @@ import { SiNextdotjs } from 'react-icons/si';
 import { GrGraphQl } from 'react-icons/gr';
 import SectionHeader from './SectionHeader';
 import PortfolioCard from './PortfolioCard';
-import { type IconType } from 'react-icons';
-
-interface PortfolioCards {
-  name: string;
-  link: string;
-  smallimg: string;
-  largeimg: string;
-  desc: string;
-  stack: JSX.Element[];
-}
+import { type PortfolioCardType } from '../lib/types';
 
 const Portfolio = () => {
-  const cards: PortfolioCards[] = [
+  const cards: PortfolioCardType[] = [
     {
       name: 'Gaius Cicereius Dashboard',
       link: 'https://dash.gaiusbot.me',

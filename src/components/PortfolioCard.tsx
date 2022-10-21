@@ -1,6 +1,11 @@
 import ModalImage from 'react-modal-image';
+import { type PortfolioCardType } from '../lib/types';
 
-const PortfolioCard = ({ item: { name, link, desc, smallimg, largeimg, stack } }) => (
+interface Props {
+  item: PortfolioCardType
+}
+
+const PortfolioCard = ({ item: { name, link, desc, smallimg, largeimg, stack } }: Props) => (
   <>
     <div className="card">
       <ModalImage small={smallimg} large={largeimg} alt={name} hideDownload hideZoom />
