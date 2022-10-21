@@ -1,7 +1,12 @@
+import { CardPost } from '../lib/types';
 import BlogCard from './BlogCard';
 import SectionHeader from './SectionHeader';
 
-const Blog = ({ posts }) => (
+interface Props {
+  posts: CardPost[];
+}
+
+const Blog = ({ posts }: Props) => (
   <>
     <SectionHeader name="Blog" />
     <div className="blogPosts">
